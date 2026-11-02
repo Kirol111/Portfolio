@@ -1,4 +1,4 @@
-//features
+// menu button for mobile
 var menuBtn = document.getElementById("menu-btn");
 var navMenu = document.getElementById("nav-menu");
 
@@ -13,7 +13,7 @@ function toggleMenu() {
 }
 menuBtn.onclick = toggleMenu;
 
-//the one that close the menu
+// close the menu after clicking a link
 var navLinks = navMenu.getElementsByTagName("a");
 for (var i = 0; i < navLinks.length; i++) {
   navLinks[i].onclick = function () {
@@ -22,7 +22,7 @@ for (var i = 0; i < navLinks.length; i++) {
   };
 }
 
-//day and night mode
+// day and night mode
 var modeBtn = document.getElementById("mode-btn");
 
 function switchMode() {
@@ -36,7 +36,7 @@ function switchMode() {
 }
 modeBtn.onclick = switchMode;
 
-//greeting message
+// greeting text based on time
 var greeting = document.getElementById("greeting");
 var hour = new Date().getHours();
 
@@ -48,7 +48,7 @@ if (hour < 12) {
   greeting.innerHTML = "GOOD EVENING, PLAYER!";
 }
 
-//1-up counter
+// 1-up mushroom counter
 var mushroom = document.getElementById("mushroom");
 var oneupCount = document.getElementById("oneup-count");
 var lives = 0;
@@ -59,7 +59,7 @@ function addLife() {
 }
 mushroom.onclick = addLife;
 
-//project filter button
+// project filter buttons
 var filterButtons = document.getElementsByClassName("filter-btn");
 var projectCards = document.getElementsByClassName("stage-card");
 
@@ -76,7 +76,7 @@ function filterProjects(type) {
 
 for (var j = 0; j < filterButtons.length; j++) {
   filterButtons[j].onclick = function () {
-    // remove "active" from all buttons, then add it to the clicked one
+    // reset all buttons first then set clicked one to active
     for (var k = 0; k < filterButtons.length; k++) {
       filterButtons[k].className = "filter-btn";
     }
@@ -85,7 +85,7 @@ for (var j = 0; j < filterButtons.length; j++) {
   };
 }
 
-//open all skill button
+// open and close all skill boxes
 var skillBoxes = document.getElementsByClassName("inventory-slot");
 var openAllBtn = document.getElementById("open-all");
 var closeAllBtn = document.getElementById("close-all");
@@ -104,13 +104,13 @@ function closeAllSkills() {
 openAllBtn.onclick = openAllSkills;
 closeAllBtn.onclick = closeAllSkills;
 
-//copy email
+// copy email button
 var copyBtn = document.getElementById("copy-email");
 var copyMsg = document.getElementById("copy-msg");
 
 function copyEmail() {
   var email = "csyakirul359@gmail.com";
-  //only work on https
+  // only works on https or localhost
   if (navigator.clipboard) {
     navigator.clipboard.writeText(email);
     copyMsg.innerHTML = "EMAIL COPIED!";
@@ -120,7 +120,7 @@ function copyEmail() {
 }
 copyBtn.onclick = copyEmail;
 
-//contact form
+// check contact form boxes
 var sendBtn = document.getElementById("send-btn");
 var formMessage = document.getElementById("form-message");
 
@@ -145,7 +145,7 @@ function checkForm() {
 }
 sendBtn.onclick = checkForm;
 
-//back to back top button
+// back to top button
 var topBtn = document.getElementById("top-btn");
 
 function checkScroll() {
@@ -162,5 +162,5 @@ function goToTop() {
 }
 topBtn.onclick = goToTop;
 
-// footer
+// update year in footer
 document.getElementById("year").innerHTML = new Date().getFullYear();
