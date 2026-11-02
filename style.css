@@ -667,7 +667,730 @@ body.night-mode .title-container {
     display: inline-block;
   }
 
-  /*nav becomes a dropdown that opens with the menu button*/
+  /*nav becomes a dropdown that opens with the menu button/* main colours and fonts */
+:root {
+  --sky-blue: #60a5fa;
+  --sky-bright: #93c5fd;
+  --brick-orange: #ea580c;
+  --coin-yellow: #fde047;
+  --mario-red: #ef4444;
+  --pipe-green: #22c55e;
+  --pipe-dark: #15803d;
+  --card-bg: #1e1b4b;
+  --card-border: #facc15;
+  --text-white: #ffffff;
+  --text-soft: #fef08a;
+  --sky-low: #38bdf8;
+
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-arcade: 'VT323', monospace;
+}
+
+/* reset and page background */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scroll when clicking nav links */
+}
+
+body {
+  background: linear-gradient(180deg, var(--sky-bright) 0%, var(--sky-blue) 40%, var(--sky-low) 100%);
+  background-attachment: fixed;
+  color: var(--text-white);
+  font-family: var(--font-arcade);
+  font-size: 22px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* makes the shape round like an oval */
+.oval-pill {
+  border-radius: 999px;
+}
+
+/* top navbar (stays fixed when scrolling) */
+.hud-header {
+  position: fixed;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.hud-container {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 4px solid var(--coin-yellow);
+  border-radius: 999px;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.hud-logo {
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  color: var(--coin-yellow);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.m-badge {
+  background: var(--mario-red);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+}
+
+.hud-nav a {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.hud-nav a:hover {
+  background: var(--coin-yellow);
+  color: #000;
+  box-shadow: 2px 2px 0 #000;
+}
+
+/* title screen */
+.title-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.title-container {
+  background: rgba(30, 27, 75, 0.92);
+  border: 6px solid var(--coin-yellow);
+  border-radius: 120px;
+  padding: 60px 45px;
+  max-width: 860px;
+  box-shadow: 8px 8px 0px #000;
+}
+
+.title-icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.badge-tag {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  color: #000;
+  background: var(--coin-yellow);
+  border: 3px solid #000;
+  padding: 8px 22px;
+  margin-bottom: 22px;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.mario-callout {
+  font-family: var(--font-pixel);
+  font-size: 1.3rem;
+  color: var(--mario-red);
+  text-shadow: 3px 3px 0px #fff;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-family: var(--font-pixel);
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 35px;
+  text-shadow: 4px 4px 0px #000;
+}
+
+.btn-start {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  color: #000;
+  background: var(--coin-yellow);
+  border: 4px solid #000;
+  padding: 16px 36px;
+  text-decoration: none;
+  box-shadow: 6px 6px 0px #000;
+}
+
+.btn-start:hover {
+  background: #fff;
+}
+
+/* shared layout for all sections */
+section:not(.title-screen) {
+  padding: 110px 20px 80px 20px;
+}
+
+.section-container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.oval-heading {
+  display: inline-block;
+  background: var(--card-bg);
+  border: 4px solid var(--coin-yellow);
+  border-radius: 999px;
+  padding: 12px 36px;
+  box-shadow: 5px 5px 0px #000;
+}
+
+.section-title {
+  font-family: var(--font-pixel);
+  font-size: 1.3rem;
+  color: var(--coin-yellow);
+}
+
+.section-tagline {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  text-shadow: 2px 2px 0px #000;
+  margin-top: 14px;
+}
+
+/* card style for about and skills */
+.mario-card-oval {
+  background: var(--card-bg);
+  border: 5px solid var(--card-border);
+  border-radius: 65px;
+  box-shadow: 8px 8px 0px #000;
+  padding: 35px 32px;
+}
+
+/* about me section */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+}
+
+.card-title {
+  font-family: var(--font-pixel);
+  font-size: 0.9rem;
+  color: var(--coin-yellow);
+  margin-bottom: 18px;
+  border-bottom: 3px dashed var(--brick-orange);
+  padding-bottom: 10px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 1.2rem;
+}
+
+.stat-label {
+  color: var(--text-soft);
+}
+
+.progression-box {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 3px dashed var(--brick-orange);
+}
+
+.progression-title {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: var(--coin-yellow);
+  margin-bottom: 10px;
+}
+
+.progression-meter {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: #000;
+  background: var(--coin-yellow);
+  padding: 12px 20px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.bio-card p {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: #f8fafc;
+}
+
+/* projects section */
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.stage-card {
+  background: var(--card-bg);
+  border: 5px solid var(--brick-orange);
+  border-radius: 75px;
+  box-shadow: 8px 8px 0px #000;
+  padding: 45px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stage-card:hover {
+  border-color: var(--coin-yellow);
+}
+
+.stage-badge {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  background: var(--mario-red);
+  padding: 6px 16px;
+  margin-bottom: 16px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.stage-title {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+.stage-problem,
+.stage-solution {
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+  color: #e2e8f0;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+.stage-problem strong {
+  color: #f87171; /* red */
+}
+
+.stage-solution strong {
+  color: #4ade80; /* green */
+}
+
+.tools-used-section {
+  width: 100%;
+  margin-top: auto; /* pushes tags to the bottom of the card */
+  padding-top: 18px;
+  border-top: 3px dashed var(--brick-orange);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tools-title {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: var(--coin-yellow);
+  margin-bottom: 12px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tag {
+  background: #0f172a;
+  border: 3px solid var(--coin-yellow);
+  font-size: 1rem;
+  padding: 5px 16px;
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* skills section */
+.inventory-slots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inventory-slot {
+  cursor: pointer;
+}
+
+.inventory-slot:hover {
+  border-color: #fff;
+}
+
+.slot-header {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  color: var(--coin-yellow);
+}
+
+.slot-header::-webkit-details-marker {
+  display: none; /* hides default arrow */
+}
+
+.slot-action {
+  font-size: 0.65rem;
+  color: #000;
+  background: var(--coin-yellow);
+  padding: 6px 14px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* turns red when box is open */
+.inventory-slot[open] .slot-action {
+  background: var(--mario-red);
+  color: #fff;
+}
+
+.slot-details {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 3px dashed var(--brick-orange);
+}
+
+.badge-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* small oval skill tags */
+.lang-badge,
+.tech-badge,
+.method-badge {
+  font-size: 1.1rem;
+  background: #0f172a;
+  border: 3px solid var(--coin-yellow);
+  padding: 5px 16px;
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* contact pipes */
+.pipes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.pipe-card {
+  width: 220px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.pipe-card:hover {
+  opacity: 0.85;
+}
+
+/* top rim of the pipe */
+.pipe-rim {
+  height: 30px;
+  background: var(--pipe-green);
+  border: 4px solid #000;
+  border-radius: 10px;
+}
+
+/* bottom body of the pipe */
+.pipe-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 10px;
+  padding: 25px 10px;
+  background: var(--pipe-dark);
+  border: 4px solid #000;
+  border-top: none;
+}
+
+.pipe-label {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: var(--text-soft);
+}
+
+.pipe-dest {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+/* footer */
+.arcade-footer {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer-capsule {
+  display: inline-block;
+  background: var(--card-bg);
+  border: 4px solid var(--coin-yellow);
+  padding: 20px 40px;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  box-shadow: 5px 5px 0px #000;
+}
+
+.footer-sub {
+  margin-top: 10px;
+  color: var(--text-soft);
+}
+
+/* white outline when tabbing through buttons */
+a:focus,
+button:focus,
+summary:focus,
+input:focus,
+textarea:focus {
+  outline: 4px solid #fff;
+  outline-offset: 3px;
+}
+
+/* skip link (hidden until tab is pressed) */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 10px;
+  z-index: 2000;
+  background: var(--coin-yellow);
+  color: #000;
+  padding: 10px 16px;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* buttons used by js */
+.mode-btn,
+.menu-btn,
+.small-btn,
+.filter-btn,
+.top-btn {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: #000;
+  background: var(--coin-yellow);
+  border: 3px solid #000;
+  border-radius: 999px;
+  padding: 8px 14px;
+  box-shadow: 2px 2px 0 #000;
+  cursor: pointer;
+}
+
+.mode-btn:hover,
+.menu-btn:hover,
+.small-btn:hover,
+.filter-btn:hover,
+.top-btn:hover {
+  background: #fff;
+}
+
+.menu-btn {
+  display: none; /* only shows on phone screen */
+}
+
+.filter-bar,
+.skills-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.filter-btn.active {
+  background: var(--mario-red);
+  color: #fff;
+}
+
+.top-btn {
+  display: none; /* js shows it after scrolling down */
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.greeting {
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  color: var(--coin-yellow);
+  margin-bottom: 20px;
+}
+
+/* mushroom 1-up button */
+.mushroom-btn {
+  font-size: 3.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.oneup-text {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  margin-bottom: 15px;
+}
+
+/* contact form */
+.contact-form {
+  max-width: 600px;
+  margin: 50px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--card-bg);
+  border: 5px solid var(--card-border);
+  border-radius: 40px;
+  box-shadow: 8px 8px 0px #000;
+  padding: 30px;
+}
+
+.contact-form label {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: var(--coin-yellow);
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-arcade);
+  font-size: 1.2rem;
+  padding: 10px 14px;
+  border: 3px solid #000;
+  border-radius: 15px;
+}
+
+.form-message {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  line-height: 1.6;
+  min-height: 1.2em;
+}
+
+.copy-msg {
+  text-align: center;
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  margin-top: 15px;
+  min-height: 1.2em;
+}
+
+/* night mode colours (swaps the variables so the whole page turns dark) */
+body.night-mode {
+  --sky-bright: #312e81;
+  --sky-blue: #1e1b4b;
+  --sky-low: #0f172a;
+  --card-bg: #020617;
+}
+
+body.night-mode .title-container {
+  background: rgba(2, 6, 23, 0.92);
+}
+
+/* phone / small screen layout */
+@media (max-width: 800px) {
+  .menu-btn {
+    display: inline-block;
+  }
+
+  /* nav turns into a dropdown menu */
+  .hud-nav {
+    display: none;
+    position: absolute;
+    top: 115%;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.97);
+    border: 4px solid var(--coin-yellow);
+    border-radius: 30px;
+    padding: 15px;
+  }
+
+  .hud-nav.open {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .hud-nav a {
+    display: block;
+    padding: 12px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title-container {
+    border-radius: 60px;
+    padding: 40px 25px;
+  }
+
+  .hero-title {
+    font-size: 1.2rem;
+  }
+
+  .mario-card-oval {
+    border-radius: 40px;
+    padding: 25px 20px;
+  }
+
+  .stage-card {
+    border-radius: 40px;
+  }
+
+  .stages-grid {
+    grid-template-columns: 1fr;
+  }
+}*/
   .hud-nav {
     display: none;
     position: absolute;
