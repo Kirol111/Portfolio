@@ -1,348 +1,375 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Syakirul's Portfolio | Super Portfolio World</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Mohammad Syakirul Asyraaf, Network Computing student at UNIMAS.">
+    <title>Syakirul's Portfolio | Super Portfolio World</title>
 
- 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <!-- pixel fonts from google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
+    <!-- link to css -->
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <!-- skip link when pressing tab -->
+    <a href="#about" class="skip-link">SKIP TO CONTENT</a>
 
-  <!--navigation bar-->
-  <header class="hud-header">
-    <div class="hud-container">
+    <!-- top navbar -->
+    <header class="hud-header">
+        <div class="hud-container">
 
-      <!-- Logo / my name -->
-      <a href="#home" class="hud-logo">
-        <span class="m-badge">M</span> SYAKIRUL
-      </a>
+        <!-- my name / logo -->
+        <a href="#home" class="hud-logo">
+            <span class="m-badge">M</span> SYAKIRUL
+        </a>
 
-      <!-- Coin counter: JavaScript (script.js) adds 1 on each click -->
-      <div class="coin-display" id="coin-hud" title="Click for coins!">
-        <span class="coin-icon">🪙</span>
-        <span>x</span>
-        <span id="coin-counter">0</span>
-      </div>
+        <!-- night mode button -->
+        <button type="button" class="mode-btn" id="mode-btn">🌙 NIGHT</button>
 
-      <!--link that make jump to section possible-->
-      <nav class="hud-nav">
-        <ul class="nav-links">
-          <li><a href="#home">WORLD 1-1</a></li>
-          <li><a href="#about">PROFILE</a></li>
-          <li><a href="#projects">STAGES</a></li>
-          <li><a href="#skills">POWER-UPS</a></li>
-          <li><a href="#contact">WARP ZONE</a></li>
-        </ul>
-      </nav>
+        <!-- menu button for phone screen -->
+        <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-menu">☰ MENU</button>
 
-    </div>
-  </header>
-
-  <main>
-
-    <!--home-->
-    <section id="home" class="title-screen">
-      <div class="title-container">
-        <div class="title-icon">🍄</div>
-        <div class="badge-tag oval-pill">TIER 03 &bull; (CS) NETWORK COMPUTING</div>
-
-        <p class="mario-callout">IT'S-A ME,</p>
-        <h1 class="hero-title">MOHAMMAD SYAKIRUL ASYRAAF</h1>
-
-        <a href="#about" class="btn-start oval-pill">[ &#9654; PRESS TO ENTER WORLD ]</a>
-      </div>
-    </section>
-
-    <!--about me-->
-    <section id="about" class="about-section">
-      <div class="section-container">
-
-        <div class="section-header">
-          <h2 class="section-title oval-heading">CHARACTER PROFILE</h2>
-          <p class="section-tagline">PLAYER 1 STATS &amp; EDUCATION</p>
-        </div>
-
-        <!-- Grid of cards -->
-        <div class="about-grid">
-
-          <!-- Card 1: education -->
-          <div class="mario-card-oval stats-card">
-            <h3 class="card-title">ACADEMIC STATS</h3>
-
-            <div class="stat-row">
-              <span class="stat-label">PROGRAMME:</span>
-              <span class="stat-value">B.CS Network Computing (Hons)</span>
-            </div>
-
-            <div class="stat-row">
-              <span class="stat-label">CAMPUS:</span>
-              <span class="stat-value">UNIMAS</span>
-            </div>
-
-            <div class="progression-box">
-              <div class="progression-title">PROGRESSION:</div>
-              <div class="progression-meter oval-pill">
-                TIER 3 [🍄🍄🍄⭐] DEGREE CLEAR IN REACH
-              </div>
-            </div>
-          </div>
-
-          <!--short biography-->
-          <div class="mario-card-oval bio-card">
-            <h3 class="card-title">MISSION BRIEFING</h3>
-            <p>
-              I am an undergraduate specializing in <strong>Network Computing</strong>. My coursework combines system administration, object-oriented programming in Java, network routing simulations, and database architecture.
-            </p>
-            <p>
-              Whether configuring virtual packet routes in Cisco Packet Tracer or structuring normalized relational schemas, I focus on clean system logic, modular development, and systematic troubleshooting.
-            </p>
-          </div>
+        <!-- nav links -->
+        <nav class="hud-nav" id="nav-menu" aria-label="Main navigation">
+            <ul class="nav-links">
+            <li><a href="#home">WORLD 1-1</a></li>
+            <li><a href="#about">PROFILE</a></li>
+            <li><a href="#projects">STAGES</a></li>
+            <li><a href="#skills">POWER-UPS</a></li>
+            <li><a href="#contact">WARP ZONE</a></li>
+            </ul>
+        </nav>
 
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!--projects-->
-    <section id="projects" class="stages-section">
-      <div class="section-container">
+    <main>
 
-        <div class="section-header">
-          <h2 class="section-title oval-heading">STAGE SELECT</h2>
-          <p class="section-tagline">COMPLETED QUESTS &amp; SYSTEM BUILDS</p>
+        <!-- home / title screen -->
+        <section id="home" class="title-screen">
+        <div class="title-container">
+            <!-- click mushroom to add 1-up -->
+            <button type="button" class="mushroom-btn" id="mushroom" aria-label="Collect a 1-UP">🍄</button>
+            <p class="oneup-text">1-UPS: <span id="oneup-count">0</span></p>
+
+            <div class="badge-tag oval-pill">YEAR 3 &bull; NETWORK COMPUTING</div>
+
+            <p class="greeting" id="greeting">WELCOME, PLAYER!</p>
+
+            <p class="mario-callout">IT'S-A ME,</p>
+            <h1 class="hero-title">MOHAMMAD SYAKIRUL ASYRAAF</h1>
+
+            <a href="#about" class="btn-start oval-pill">[ &#9654; PRESS START ]</a>
         </div>
+        </section>
 
-        <!--same structure repeated -->
-        <div class="stages-grid">
+        <!-- about me -->
+        <section id="about" class="about-section">
+        <div class="section-container">
 
-        <!--1.1-->
-        <article class="stage-card">
-          <div class="stage-badge oval-pill">STAGE 1-1</div>
-          <h3 class="stage-title">Java SDG Interactive Learning App</h3>
-          <p class="stage-problem"><strong>Challenge:</strong> Reading walls of text about sustainability gets boring fast, so users lose interest before actually understanding the material.</p>
-          <p class="stage-solution"><strong>Cleared:</strong> Developed an interactive desktop application using Java Swing with modular quiz logic, score calculation, and progress tracking.</p>
-
-          <div class="tools-used-section">
-            <span class="tools-title">Tools Used:</span>
-            <div class="tech-tags">
-            <span class="tag oval-pill">Java</span>
-            <span class="tag oval-pill">Java Swing</span>
-            <span class="tag oval-pill">OOP Design</span>
+            <div class="section-header">
+            <h2 class="section-title oval-heading">ABOUT ME</h2>
+            <p class="section-tagline">PLAYER 1: STATS &amp; STUDIES</p>
             </div>
-          </div>
-        </article>
 
-        <!--1.2-->
-        <article class="stage-card">
-          <div class="stage-badge oval-pill">STAGE 1-2</div>
-          <h3 class="stage-title">Enterprise Multi-VLAN Network Topology</h3>
-          <p class="stage-problem"><strong>Challenge:</strong> Having every campus department on the same network caused heavy traffic lag and let anyone peek into unauthorized internal data.</p>
-          <p class="stage-solution"><strong>Cleared:</strong> Configured a hierarchical campus topology in Cisco Packet Tracer implementing VLAN segmentation, inter-VLAN routing, and ACL packet filters.</p>
+            <!-- 2 column grid for my cards -->
+            <div class="about-grid">
 
-          <div class="tools-used-section">
-            <span class="tools-title">Tools Used:</span>
-            <div class="tech-tags">
-            <span class="tag oval-pill">Cisco Packet Tracer</span>
-            <span class="tag oval-pill">VLAN Routing</span>
-            <span class="tag oval-pill">Subnetting</span>
+            <!-- card 1: uni details -->
+            <div class="mario-card-oval stats-card">
+                <h3 class="card-title">MY STUDIES</h3>
+
+                <div class="stat-row">
+                <span class="stat-label">PROGRAMME:</span>
+                <span class="stat-value">B.CS Network Computing (Hons)</span>
+                </div>
+
+                <div class="stat-row">
+                <span class="stat-label">CAMPUS:</span>
+                <span class="stat-value">UNIMAS</span>
+                </div>
+
+                <div class="progression-box">
+                <div class="progression-title">LEVEL PROGRESS:</div>
+                <div class="progression-meter oval-pill">
+                    YEAR 3 [🍄🍄🍄⭐] ALMOST AT THE FLAGPOLE
+                </div>
+                </div>
             </div>
-          </div>
-        </article>
 
-        <!--1.3-->
-        <article class="stage-card">
-          <div class="stage-badge oval-pill">STAGE 1-3</div>
-          <h3 class="stage-title">Relational Database &amp; Normalization Engine</h3>
-          <p class="stage-problem"><strong>Challenge:</strong> The original student records were a messy clutter of duplicates and mismatched entries that broke whenever someone tried to update them.</p>
-          <p class="stage-solution"><strong>Cleared:</strong> Designed an entity-relationship schema normalized up to 3NF, executing optimized SQL queries, joins, and integrity constraints in MySQL.</p>
-
-          <div class="tools-used-section">
-            <span class="tools-title">Tools Used:</span>
-            <div class="tech-tags">
-            <span class="tag oval-pill">MySQL</span>
-            <span class="tag oval-pill">ERD Schema</span>
-            <span class="tag oval-pill">Database Design</span>
+            <!-- card 2: short intro -->
+            <div class="mario-card-oval bio-card">
+                <h3 class="card-title">MISSION BRIEFING</h3>
+                <p>
+                I'm a <strong>Network Computing</strong> student at UNIMAS. So far I've worked on Java programs, Python and MySQL databases, and a Flask login page.
+                </p>
+                <p>
+                I like getting things to work, and I like it even more when I find out why they didn't. Every bug is just another Goomba to stomp.
+                </p>
             </div>
-          </div>
-        </article>
 
-        <!--1.4-->
-        <article class="stage-card">
-          <div class="stage-badge oval-pill">STAGE 1-4</div>
-          <h3 class="stage-title">Linux Server Administration &amp; Hardening</h3>
-          <p class="stage-problem"><strong>Challenge:</strong> Leaving a server on default factory settings is an open invitation for intruders, especially with root logins and open ports left exposed.</p>
-          <p class="stage-solution"><strong>Cleared:</strong> Automated secure user permission trees, SSH key authentication, UFW firewall boundaries, and cron-scheduled service monitoring via Bash scripts.</p>
-
-          <div class="tools-used-section">
-            <span class="tools-title">Tools Used:</span>
-            <div class="tech-tags">
-            <span class="tag oval-pill">Linux / Bash</span>
-            <span class="tag oval-pill">SysAdmin</span>
-            <span class="tag oval-pill">Security Hardening</span>
             </div>
-          </div>
-        </article>
+        </div>
+        </section>
 
-        <!--1.5-->
-        <article class="stage-card">
-          <div class="stage-badge oval-pill">STAGE 1-5</div>
-          <h3 class="stage-title">Retro 8-Bit Mario Portfolio System</h3>
-          <p class="stage-problem"><strong>Challenge:</strong> Most tech student portfolios use the exact same plain template, making it hard to show off any real personality or frontend creativity.</p>
-          <p class="stage-solution"><strong>Cleared:</strong> Built a gamified personal showcase utilizing pure semantic HTML5, custom CSS arcade themes, and interactive JavaScript state toggles.</p>
+        <!-- projects -->
+        <section id="projects" class="stages-section">
+        <div class="section-container">
 
-          <div class="tools-used-section">
-            <span class="tools-title">Tools Used:</span>
-            <div class="tech-tags">
-            <span class="tag oval-pill">HTML5</span>
-            <span class="tag oval-pill">CSS3</span>
-            <span class="tag oval-pill">JavaScript</span>
+            <div class="section-header">
+            <h2 class="section-title oval-heading">STAGE SELECT</h2>
+            <p class="section-tagline">STAGES I'VE CLEARED</p>
             </div>
-          </div>
-        </article>
+
+            <!-- filter buttons -->
+            <div class="filter-bar">
+            <button type="button" class="filter-btn active" data-filter="all">ALL</button>
+            <button type="button" class="filter-btn" data-filter="python">PYTHON</button>
+            <button type="button" class="filter-btn" data-filter="java">JAVA</button>
+            <button type="button" class="filter-btn" data-filter="web">WEB</button>
+            </div>
+
+            <!-- project cards (data-type is for the filter buttons) -->
+            <div class="stages-grid">
+
+            <!-- project 1 -->
+            <article class="stage-card" data-type="java">
+                <div class="stage-badge oval-pill">STAGE 1-1</div>
+                <h3 class="stage-title">Java SDG Quiz App</h3>
+                <p class="stage-problem"><strong>The boss:</strong> Reading long text about sustainability gets boring fast, so people stop reading.</p>
+                <p class="stage-solution"><strong>How I won:</strong> With two teammates, I built a Java Swing app with 10 learning pages, a 20-question quiz, badges and a leaderboard saved to a text file. I made the home page, the quiz module, the about page and the ScoreSaver interface.</p>
+
+                <div class="tools-used-section">
+                <span class="tools-title">Power-ups used:</span>
+                <div class="tech-tags">
+                    <span class="tag oval-pill">Java</span>
+                    <span class="tag oval-pill">Java Swing</span>
+                    <span class="tag oval-pill">OOP</span>
+                </div>
+                </div>
+            </article>
+
+            <!-- project 2 -->
+            <article class="stage-card" data-type="python">
+                <div class="stage-badge oval-pill">STAGE 1-2</div>
+                <h3 class="stage-title">FitLife Wellness Centre</h3>
+                <p class="stage-problem"><strong>The boss:</strong> A gym has to keep track of members, trainers, classes and payments without making a mess.</p>
+                <p class="stage-solution"><strong>How I won:</strong> Our team of 5 built a Python console app connected to MySQL with 12 tables. It has menus for members, trainers, programs, classes, enrollments, payments, attendance and reports.</p>
+
+                <div class="tools-used-section">
+                <span class="tools-title">Power-ups used:</span>
+                <div class="tech-tags">
+                    <span class="tag oval-pill">Python</span>
+                    <span class="tag oval-pill">MySQL</span>
+                    <span class="tag oval-pill">Database Design</span>
+                </div>
+                </div>
+            </article>
+
+            <!-- project 3 -->
+            <article class="stage-card" data-type="python">
+                <div class="stage-badge oval-pill">STAGE 1-3</div>
+                <h3 class="stage-title">Adaptive MFA Login</h3>
+                <p class="stage-problem"><strong>The boss:</strong> A password alone is not very safe, so a login should check more than one thing.</p>
+                <p class="stage-solution"><strong>How I won:</strong> Built a Flask login page where step 1 asks for a username, a password and a device ID before the identity check continues.</p>
+
+                <div class="tools-used-section">
+                <span class="tools-title">Power-ups used:</span>
+                <div class="tech-tags">
+                    <span class="tag oval-pill">Python</span>
+                    <span class="tag oval-pill">Flask</span>
+                    <span class="tag oval-pill">HTML</span>
+                </div>
+                </div>
+            </article>
+
+            <!-- project 4 -->
+            <article class="stage-card" data-type="web">
+                <div class="stage-badge oval-pill">STAGE 1-4</div>
+                <h3 class="stage-title">My Mario Portfolio</h3>
+                <p class="stage-problem"><strong>The boss:</strong> Most student portfolios look the same, so I wanted mine to show some personality.</p>
+                <p class="stage-solution"><strong>How I won:</strong> Built this site with HTML, CSS and JavaScript. It has a day and night mode, project filters, a mobile menu and a contact form check.</p>
+
+                <div class="tools-used-section">
+                <span class="tools-title">Power-ups used:</span>
+                <div class="tech-tags">
+                    <span class="tag oval-pill">HTML5</span>
+                    <span class="tag oval-pill">CSS3</span>
+                    <span class="tag oval-pill">JavaScript</span>
+                </div>
+                </div>
+            </article>
+            </div>
+        </div>
+        </section>
+
+        <!-- skills -->
+        <section id="skills" class="inventory-section">
+        <div class="section-container">
+
+            <div class="section-header">
+            <h2 class="section-title oval-heading">🍄 POWER-UP INVENTORY</h2>
+            <p class="section-tagline">TAP A BOX TO OPEN IT</p>
+            </div>
+
+            <!-- open / close all buttons -->
+            <div class="skills-controls">
+            <button type="button" class="small-btn" id="open-all">OPEN ALL</button>
+            <button type="button" class="small-btn" id="close-all">CLOSE ALL</button>
+            </div>
+
+            <!-- details tag lets it open and close when clicked -->
+            <div class="inventory-slots-container">
+
+            <!-- box 1 -->
+            <details class="inventory-slot mario-card-oval">
+                <summary class="slot-header">
+                <span class="slot-title">&gt; CODING LANGUAGES</span>
+                <span class="slot-action oval-pill">[ ▶ OPEN ]</span>
+                </summary>
+                <div class="slot-details">
+                <div class="badge-cluster">
+                    <span class="lang-badge oval-pill">Python</span>
+                    <span class="lang-badge oval-pill">C / C++</span>
+                    <span class="lang-badge oval-pill">Java (OOP)</span>
+                    <span class="lang-badge oval-pill">SQL / MySQL</span>
+                    <span class="lang-badge oval-pill">HTML / CSS / JS</span>
+                </div>
+                </div>
+            </details>
+
+            <!-- box 2 -->
+            <details class="inventory-slot mario-card-oval">
+                <summary class="slot-header">
+                <span class="slot-title">&gt; TOOLS &amp; NETWORKING</span>
+                <span class="slot-action oval-pill">[ ▶ OPEN ]</span>
+                </summary>
+                <div class="slot-details">
+                <div class="badge-cluster">
+                    <span class="tech-badge oval-pill">📡 Cisco Packet Tracer</span>
+                    <span class="tech-badge oval-pill">💻 Visual Studio Code</span>
+                    <span class="tech-badge oval-pill">🐧 Linux Shell &amp; Bash</span>
+                    <span class="tech-badge oval-pill">🐙 Git &amp; GitHub</span>
+                </div>
+                </div>
+            </details>
+
+            <!-- box 3 -->
+            <details class="inventory-slot mario-card-oval">
+                <summary class="slot-header">
+                <span class="slot-title">&gt; HOW I WORK</span>
+                <span class="slot-action oval-pill">[ ▶ OPEN ]</span>
+                </summary>
+                <div class="slot-details">
+                <div class="badge-cluster">
+                    <span class="method-badge oval-pill">Teamwork on group projects</span>
+                    <span class="method-badge oval-pill">Object-Oriented Design</span>
+                    <span class="method-badge oval-pill">Debugging</span>
+                </div>
+                </div>
+            </details>
+
+            <!-- box 4 -->
+            <details class="inventory-slot mario-card-oval">
+                <summary class="slot-header">
+                <span class="slot-title">&gt; LANGUAGES I SPEAK</span>
+                <span class="slot-action oval-pill">[ ▶ OPEN ]</span>
+                </summary>
+                <div class="slot-details">
+                <div class="badge-cluster">
+                    <span class="lang-badge oval-pill">ENGLISH</span>
+                    <span class="lang-badge oval-pill">MALAY</span>
+                </div>
+                </div>
+            </details>
+
+            </div>
+        </div>
+        </section>
+
+        <!-- contact -->
+        <section id="contact" class="warp-section">
+        <div class="section-container">
+
+            <div class="section-header">
+            <h2 class="section-title oval-heading">WELCOME TO WARP ZONE!</h2>
+            <p class="section-tagline">PICK A PIPE TO GET IN TOUCH</p>
+            </div>
+
+            <div class="pipes-grid">
+
+            <!-- pipe 1: email -->
+            <a href="mailto:csyakirul359@gmail.com" class="pipe-card">
+                <div class="pipe-rim"></div>
+                <div class="pipe-body">
+                <span class="pipe-label">PIPE 1</span>
+                <span class="pipe-dest">EMAIL ME</span>
+                </div>
+            </a>
+
+            <!-- pipe 2: phone number -->
+            <a href="tel:0123934755" class="pipe-card">
+                <div class="pipe-rim"></div>
+                <div class="pipe-body">
+                <span class="pipe-label">PIPE 2</span>
+                <span class="pipe-dest">012-3934755</span>
+                </div>
+            </a>
+
+            <!-- pipe 3: linkedin -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="pipe-card">
+                <div class="pipe-rim"></div>
+                <div class="pipe-body">
+                <span class="pipe-label">PIPE 3</span>
+                <span class="pipe-dest">LINKEDIN</span>
+                </div>
+            </a>
+
+            </div>
+
+            <!-- button to copy my email -->
+            <div class="skills-controls" style="margin-top: 30px;">
+            <button type="button" class="small-btn" id="copy-email">COPY MY EMAIL</button>
+            </div>
+            <p class="copy-msg" id="copy-msg" role="status"></p>
+
+            <!-- message form (checked by js) -->
+            <div class="contact-form">
+            <label for="name">YOUR NAME</label>
+            <input type="text" id="name" autocomplete="name">
+
+            <label for="email">YOUR EMAIL</label>
+            <input type="email" id="email" autocomplete="email">
+
+            <label for="message">MESSAGE</label>
+            <textarea id="message" rows="4"></textarea>
+
+            <button type="button" class="small-btn" id="send-btn">SEND MESSAGE</button>
+            <p class="form-message" id="form-message" role="status"></p>
+            </div>
 
         </div>
+        </section>
 
-      </div>
-    </section>
+    </main>
 
-    <!--skills-->
-    <section id="skills" class="inventory-section">
-      <div class="section-container">
+    <!-- button to go back up -->
+    <button type="button" class="top-btn" id="top-btn" aria-label="Back to top">▲ TOP</button>
 
-        <div class="section-header">
-          <h2 class="section-title oval-heading">🍄 POWER-UP INVENTORY</h2>
-          <p class="section-tagline">SELECT ITEM TO OPEN</p>
+    <!-- footer -->
+    <footer class="arcade-footer">
+        <div class="footer-capsule oval-pill">
+        <p>⭐ THANKS FOR PLAYING! ⭐</p>
+        <p class="footer-sub">&copy; <span id="year">2026</span> MOHAMMAD SYAKIRUL ASYRAAF &bull; UNIVERSITY MALAYSIA SARAWAK</p>
         </div>
+    </footer>
 
-        <!--details-->
-        <div class="inventory-slots-container">
-
-        <details class="inventory-slot mario-card-oval">
-          <summary class="slot-header">
-            <span class="slot-title">&gt; LANGUAGES &amp; CORE</span>
-            <span class="slot-action oval-pill">[ ▶ OPEN ]</span>
-          </summary>
-          <div class="slot-details">
-            <div class="badge-cluster">
-              <span class="lang-badge oval-pill">Python</span>
-              <span class="lang-badge oval-pill">C / C++</span>
-              <span class="lang-badge oval-pill">Java (OOP)</span>
-              <span class="lang-badge oval-pill">SQL / MySQL</span>
-              <span class="lang-badge oval-pill">HTML / CSS / JS</span>
-            </div>
-          </div>
-        </details>
-
-        <details class="inventory-slot mario-card-oval">
-          <summary class="slot-header">
-            <span class="slot-title">&gt; TOOLS &amp; NETWORKING</span>
-            <span class="slot-action oval-pill">[ ▶ OPEN ]</span>
-          </summary>
-          <div class="slot-details">
-            <div class="badge-cluster">
-              <span class="tech-badge oval-pill">📡 Cisco Packet Tracer</span>
-              <span class="tech-badge oval-pill">🌐 Network Architecture</span>
-              <span class="tech-badge oval-pill">🔒 Security Protocols</span>
-              <span class="tech-badge oval-pill">💻 Visual Studio Code</span>
-              <span class="tech-badge oval-pill">🐧 Linux Shell &amp; Bash</span>
-              <span class="tech-badge oval-pill">🦈 Wireshark Packet Analysis</span>
-              <span class="tech-badge oval-pill">🐙 Git &amp; GitHub</span>
-            </div>
-          </div>
-        </details>
-
-        <details class="inventory-slot mario-card-oval">
-          <summary class="slot-header">
-            <span class="slot-title">&gt; BADGES SKILL</span>
-            <span class="slot-action oval-pill">[ ▶ OPEN ]</span>
-          </summary>
-          <div class="slot-details">
-            <div class="badge-cluster">
-              <span class="method-badge oval-pill">Software Dev Lifecycle (SDLC)</span>
-              <span class="method-badge oval-pill">Agile / Scrum</span>
-              <span class="method-badge oval-pill">Object-Oriented Design (OOD)</span>
-              <span class="method-badge oval-pill">System Analysis &amp; Hardening</span>
-            </div>
-          </div>
-        </details>
-
-        <details class="inventory-slot mario-card-oval">
-          <summary class="slot-header">
-            <span class="slot-title">&gt; LANGUAGES SPOKEN</span>
-            <span class="slot-action oval-pill">[ ▶ OPEN ]</span>
-          </summary>
-          <div class="slot-details">
-            <div class="badge-cluster">
-              <span class="lang-badge oval-pill">ENGLISH</span>
-              <span class="lang-badge oval-pill">MALAY</span>
-            </div>
-          </div>
-        </details>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!--contact-->
-    <section id="contact" class="warp-section">
-      <div class="section-container">
-
-        <div class="section-header">
-          <h2 class="section-title oval-heading">WELCOME TO WARP ZONE!</h2>
-          <p class="section-tagline">SELECT YOUR DESTINATION PIPE</p>
-        </div>
-
-        <div class="pipes-grid">
-
-          <!--open email-->
-          <a href="mailto:syakirul359@gmail.com" class="pipe-card">
-            <div class="pipe-rim"></div>
-            <div class="pipe-body">
-              <span class="pipe-label">PIPE 1</span>
-              <span class="pipe-dest">EMAIL ME</span>
-            </div>
-          </a>
-
-          <!--phone number-->
-          <a href="tel:01163945785" class="pipe-card">
-            <div class="pipe-rim"></div>
-            <div class="pipe-body">
-              <span class="pipe-label">PIPE 2</span>
-              <span class="pipe-dest">011-63945785</span>
-            </div>
-          </a>
-
-          <!--open linkedin-->
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="pipe-card">
-            <div class="pipe-rim"></div>
-            <div class="pipe-body">
-              <span class="pipe-label">PIPE 3</span>
-              <span class="pipe-dest">LINKEDIN PROFILE</span>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="arcade-footer">
-    <div class="footer-capsule oval-pill">
-      <p>⭐ THANK YOU! BUT OUR PRINCESS IS IN ANOTHER CASTLE! ⭐</p>
-      <p class="footer-sub">&copy; 2026 MOHAMMAD SYAKIRUL ASYRAAF &bull; UNIVERSITY MALAYSIA SARAWAK</p>
-    </div>
-  </footer>
-
-  
-  <script src="script.js"></script>
-</body>
-</html>
+    <!-- link to js file -->
+    <script src="main.js"></script>
+    </body>
+    </html>
